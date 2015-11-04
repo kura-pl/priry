@@ -1,0 +1,22 @@
+1. skonfigurowac ssh aby logowac sie bez podania hasla vh1 - vh9
+2. skrypcioszek:
+cd ~
+mv .ssh .ssh_org
+ssh-keygen -t rsa
+cat .ssh/id_rsa.pub > .ssh/authorized_keys
+ssh vh1.stud.mat.umk.pl
+3. vi ~/.mpd.conf
+secretword=jakies_haslo
+4. prawa do niego 600 
+5. nowy katalog a w nim plik machines
+vi machines
+
+vh2.studmat.umk.pl
+|
+|
+vh9.studmat.umk.pl
+
+/usr/bin/mpiboot -n 4 -f MPI/machines
+/usr/bin/mpitrace -l
+/usr/bin/mpicc program.c
+/usr/bin/mpiexec -np 3
